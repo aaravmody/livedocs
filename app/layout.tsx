@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 import { ReactNode } from "react"
 import { Metadata } from 'next'
 import { dark } from '@clerk/themes'
+import Provider from './Provider'
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function RootLayout({ children }: {children: ReactNode} ) {
           fontSans.variable
         )}
       >
+        <Provider>
         {children}
+        </Provider>
       </body>
     </html>
     </ClerkProvider>
